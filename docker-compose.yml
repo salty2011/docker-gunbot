@@ -23,4 +23,12 @@ services:
       - "/volume2/docker/gunbot/config/session.json:/gunbot/session.json"
       - "/volume2/docker/gunbot/config/autoconfig.json:/gunbot/autoconfig.json"
       - "/volume2/docker/gunbot/config/conversion.json:/gunbot/conversion.json"
+
+    networks:
+      macvlan:
+        ipv4_address: 10.1.1.10
+    
+networks:
+  macvlan:
+    external: true
       
