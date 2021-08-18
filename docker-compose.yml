@@ -1,0 +1,26 @@
+version: "3.0"
+services:
+  gunbot:
+    image: magicdude4eva/gunbot-colorised
+    build: .
+    container_name: gunbot
+    restart: always
+    ports:
+      - 5555:5000
+    environment:
+      - TZ=Australia/Perth
+      - PGID=100
+      - PUID=1026
+    volumes:
+      - "/volume2/docker/gunbot/config/backups:/gunbot/backups"
+      - "/volume2/docker/gunbot/config/logs:/gunbot/gunbot_logs"
+      - "/volume2/docker/gunbot/config/logs/err.log:/gunbot/err.log"
+      - "/volume2/docker/gunbot/config/json:/gunbot/json"
+      - "/volume2/docker/gunbot/config/ssl:/gunbot/ssl"
+      - "/volume2/docker/gunbot/config/config.js:/gunbot/config.js"
+      - "/volume2/docker/gunbot/config/gunbotgui.db:/gunbot/gunbotgui.db"
+      - "/volume2/docker/gunbot/config/tgconfig.json:/gunbot/tgconfig.json"
+      - "/volume2/docker/gunbot/config/session.json:/gunbot/session.json"
+      - "/volume2/docker/gunbot/config/autoconfig.json:/gunbot/autoconfig.json"
+      - "/volume2/docker/gunbot/config/conversion.json:/gunbot/conversion.json"
+      
